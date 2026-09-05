@@ -1,0 +1,12 @@
+{
+  "expected": {
+    "control_ref": "cloud.logging.enabled",
+    "provider": "aws",
+    "scope": "organization/synthetic/logging-baseline",
+    "status": "satisfied"
+  },
+  "proposal_id": "clp-bb2a831f20e6ed931ad1",
+  "requires_evidence_digest": true,
+  "requires_newer_observation": true,
+  "schema_version": "1.0"
+}

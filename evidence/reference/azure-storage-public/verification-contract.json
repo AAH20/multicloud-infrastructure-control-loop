@@ -1,0 +1,12 @@
+{
+  "expected": {
+    "control_ref": "azure.storage.public_access",
+    "provider": "azure",
+    "scope": "/subscriptions/000/resourceGroups/rg-example/providers/Microsoft.Storage/storageAccounts/synthetic",
+    "status": "satisfied"
+  },
+  "proposal_id": "clp-cb0b5aa1e24ef49575b7",
+  "requires_evidence_digest": true,
+  "requires_newer_observation": true,
+  "schema_version": "1.0"
+}

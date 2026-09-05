@@ -1,0 +1,12 @@
+{
+  "expected": {
+    "control_ref": "kubernetes.workload.privileged",
+    "provider": "kubernetes",
+    "scope": "cluster/synthetic/namespaces/platform/deployments/device-plugin",
+    "status": "satisfied"
+  },
+  "proposal_id": "clp-30e471a8a5c4dbca6ccd",
+  "requires_evidence_digest": true,
+  "requires_newer_observation": true,
+  "schema_version": "1.0"
+}

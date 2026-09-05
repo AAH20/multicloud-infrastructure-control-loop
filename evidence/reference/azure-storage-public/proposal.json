@@ -1,0 +1,59 @@
+{
+  "approval": {
+    "minimum_reviewers": 2,
+    "required": true,
+    "state": "unapproved"
+  },
+  "blast_radius": {
+    "dependency_count": 3,
+    "factors": {
+      "base": 4,
+      "data_path": 2,
+      "dependencies": 1,
+      "shared_scope": 2
+    },
+    "level": "critical",
+    "score": 9
+  },
+  "control_ref": "azure.storage.public_access",
+  "cost": {
+    "confidence": "low",
+    "currency": "USD",
+    "model": "fixture assumption, not a provider quote",
+    "monthly_delta": {
+      "expected": 18.0,
+      "high": 73.0,
+      "low": 7.3
+    },
+    "validation_required": [
+      "Live provider pricing",
+      "Region and tier",
+      "Measured traffic or ingestion",
+      "Existing commitments and discounts"
+    ]
+  },
+  "iac_targets": [
+    "terraform",
+    "opentofu",
+    "bicep"
+  ],
+  "input_digest": "d8ea188ace8381216a51c9f9c0fc30bd6fe5a0d9c6c09d5db82c4017a439ebb4",
+  "mutation": {
+    "allowed_by_compiler": false,
+    "performed": false
+  },
+  "observed_at": "2026-09-05T10:00:00Z",
+  "proposal_id": "clp-cb0b5aa1e24ef49575b7",
+  "proposed_change": "Add a Private Endpoint and private DNS association, then disable public network access after consumer-path validation.",
+  "provider": "azure",
+  "rule_id": "azure-storage-public-access",
+  "schema_version": "1.0",
+  "scope": "/subscriptions/000/resourceGroups/rg-example/providers/Microsoft.Storage/storageAccounts/synthetic",
+  "tests": [
+    "Resolve the storage FQDN from every approved network",
+    "Test application read/write paths",
+    "Confirm public path denial",
+    "Recollect Azure Policy state"
+  ],
+  "title": "Move Azure Storage to an approved private-access path"
+}

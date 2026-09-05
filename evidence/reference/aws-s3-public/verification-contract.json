@@ -1,0 +1,12 @@
+{
+  "expected": {
+    "control_ref": "aws.s3.public_access",
+    "provider": "aws",
+    "scope": "arn:aws:s3:::synthetic-public-bucket",
+    "status": "satisfied"
+  },
+  "proposal_id": "clp-5a6e9b6fbbe45db4d1b4",
+  "requires_evidence_digest": true,
+  "requires_newer_observation": true,
+  "schema_version": "1.0"
+}

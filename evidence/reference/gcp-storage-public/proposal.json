@@ -1,0 +1,59 @@
+{
+  "approval": {
+    "minimum_reviewers": 1,
+    "required": true,
+    "state": "unapproved"
+  },
+  "blast_radius": {
+    "dependency_count": 2,
+    "factors": {
+      "base": 3,
+      "data_path": 2,
+      "dependencies": 0,
+      "shared_scope": 0
+    },
+    "level": "medium",
+    "score": 5
+  },
+  "control_ref": "gcp.storage.public_access_prevention",
+  "cost": {
+    "confidence": "low",
+    "currency": "USD",
+    "model": "fixture assumption, not a provider quote",
+    "monthly_delta": {
+      "expected": 0.0,
+      "high": 5.0,
+      "low": 0.0
+    },
+    "validation_required": [
+      "Live provider pricing",
+      "Region and tier",
+      "Measured traffic or ingestion",
+      "Existing commitments and discounts"
+    ]
+  },
+  "iac_targets": [
+    "terraform",
+    "opentofu",
+    "config-connector"
+  ],
+  "input_digest": "1b64649ee0b88a70f8af35a3872c21291b6e853203e831539a061bffc21905e4",
+  "mutation": {
+    "allowed_by_compiler": false,
+    "performed": false
+  },
+  "observed_at": "2026-09-05T10:00:00Z",
+  "proposal_id": "clp-c03315e8d4fc31e7b62d",
+  "proposed_change": "Enable Public Access Prevention and remove broad IAM members after validating intended public delivery and service identities.",
+  "provider": "gcp",
+  "rule_id": "gcp-storage-public-access",
+  "schema_version": "1.0",
+  "scope": "//storage.googleapis.com/synthetic-public-bucket",
+  "tests": [
+    "Inventory allUsers and allAuthenticatedUsers bindings",
+    "Validate application identities",
+    "Confirm intended public delivery replacement",
+    "Recollect SCC state"
+  ],
+  "title": "Enforce approved Cloud Storage access"
+}

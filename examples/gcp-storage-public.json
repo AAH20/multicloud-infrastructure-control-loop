@@ -1,0 +1,1 @@
+{"provider":"gcp","control_ref":"gcp.storage.public_access_prevention","scope":"//storage.googleapis.com/synthetic-public-bucket","status":"not_satisfied","observed_at":"2026-09-05T10:00:00Z","context":{"dependency_count":2,"shared_scope":false,"data_path":true,"confidence":0.9}}

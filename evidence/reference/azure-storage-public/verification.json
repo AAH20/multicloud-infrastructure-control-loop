@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "control_ref": true,
+    "evidence_digest_present": true,
+    "newer_observation": true,
+    "provider": true,
+    "scope": true,
+    "status": true
+  },
+  "post_change_digest": "c3e6ce9e32807dda0c404bc9be8eac67f54236e8dc3304a51b62c84158c6704e",
+  "proposal_id": "clp-cb0b5aa1e24ef49575b7",
+  "schema_version": "1.0",
+  "verified": true,
+  "verified_at": "2026-09-05T06:41:01Z"
+}

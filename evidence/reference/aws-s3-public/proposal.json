@@ -1,0 +1,59 @@
+{
+  "approval": {
+    "minimum_reviewers": 1,
+    "required": true,
+    "state": "unapproved"
+  },
+  "blast_radius": {
+    "dependency_count": 1,
+    "factors": {
+      "base": 3,
+      "data_path": 2,
+      "dependencies": 0,
+      "shared_scope": 0
+    },
+    "level": "medium",
+    "score": 5
+  },
+  "control_ref": "aws.s3.public_access",
+  "cost": {
+    "confidence": "low",
+    "currency": "USD",
+    "model": "fixture assumption, not a provider quote",
+    "monthly_delta": {
+      "expected": 0.0,
+      "high": 5.0,
+      "low": 0.0
+    },
+    "validation_required": [
+      "Live provider pricing",
+      "Region and tier",
+      "Measured traffic or ingestion",
+      "Existing commitments and discounts"
+    ]
+  },
+  "iac_targets": [
+    "terraform",
+    "opentofu",
+    "cloudformation"
+  ],
+  "input_digest": "2f7c51872d30ded74f7e2679558b3540b68107b5ca98ff8ab4a882aa2a1bead0",
+  "mutation": {
+    "allowed_by_compiler": false,
+    "performed": false
+  },
+  "observed_at": "2026-09-05T10:00:00Z",
+  "proposal_id": "clp-5a6e9b6fbbe45db4d1b4",
+  "proposed_change": "Enable account/bucket public-access controls only after identifying intended public distribution and replacing it with an approved delivery path where required.",
+  "provider": "aws",
+  "rule_id": "aws-s3-public-access",
+  "schema_version": "1.0",
+  "scope": "arn:aws:s3:::synthetic-public-bucket",
+  "tests": [
+    "Inventory bucket policies and ACLs",
+    "Validate CDN/application consumers",
+    "Confirm intended principals retain access",
+    "Recollect Security Hub state"
+  ],
+  "title": "Restrict unintended S3 public access"
+}

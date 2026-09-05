@@ -1,0 +1,1 @@
+{"provider":"kubernetes","control_ref":"kubernetes.workload.privileged","scope":"cluster/synthetic/namespaces/platform/deployments/device-plugin","status":"not_satisfied","observed_at":"2026-09-05T10:00:00Z","context":{"dependency_count":6,"shared_scope":true,"data_path":false,"confidence":0.85}}

@@ -1,0 +1,1 @@
+{"provider":"aws","control_ref":"aws.s3.public_access","scope":"arn:aws:s3:::synthetic-public-bucket","status":"not_satisfied","observed_at":"2026-09-05T10:00:00Z","context":{"dependency_count":1,"shared_scope":false,"data_path":true,"confidence":0.95}}

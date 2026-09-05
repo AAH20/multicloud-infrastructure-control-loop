@@ -1,0 +1,1 @@
+{"provider":"azure","control_ref":"azure.storage.public_access","scope":"/subscriptions/000/resourceGroups/rg-example/providers/Microsoft.Storage/storageAccounts/synthetic","status":"satisfied","observed_at":"2026-09-06T10:00:00Z","evidence_digest":"synthetic-post-change-digest"}

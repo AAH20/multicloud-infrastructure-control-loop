@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "rules": [
+    {
+      "id": "azure-storage-public-access",
+      "provider": "azure",
+      "control_ref": "azure.storage.public_access",
+      "title": "Move Azure Storage to an approved private-access path",
+      "iac_targets": ["terraform", "opentofu", "bicep"],
+      "monthly_cost_usd": {"low": 7.3, "expected": 18.0, "high": 73.0},
+      "base_risk": 4,
+      "change": "Add a Private Endpoint and private DNS association, then disable public network access after consumer-path validation.",
+      "tests": ["Resolve the storage FQDN from every approved network", "Test application read/write paths", "Confirm public path denial", "Recollect Azure Policy state"]
+    },
+    {
+      "id": "aws-s3-public-access",
+      "provider": "aws",
+      "control_ref": "aws.s3.public_access",
+      "title": "Restrict unintended S3 public access",
+      "iac_targets": ["terraform", "opentofu", "cloudformation"],
+      "monthly_cost_usd": {"low": 0.0, "expected": 0.0, "high": 5.0},
+      "base_risk": 3,
+      "change": "Enable account/bucket public-access controls only after identifying intended public distribution and replacing it with an approved delivery path where required.",
+      "tests": ["Inventory bucket policies and ACLs", "Validate CDN/application consumers", "Confirm intended principals retain access", "Recollect Security Hub state"]
+    },
+    {
+      "id": "gcp-storage-public-access",
+      "provider": "gcp",
+      "control_ref": "gcp.storage.public_access_prevention",
+      "title": "Enforce approved Cloud Storage access",
+      "iac_targets": ["terraform", "opentofu", "config-connector"],
+      "monthly_cost_usd": {"low": 0.0, "expected": 0.0, "high": 5.0},
+      "base_risk": 3,
+      "change": "Enable Public Access Prevention and remove broad IAM members after validating intended public delivery and service identities.",
+      "tests": ["Inventory allUsers and allAuthenticatedUsers bindings", "Validate application identities", "Confirm intended public delivery replacement", "Recollect SCC state"]
+    },
+    {
+      "id": "kubernetes-privileged-workload",
+      "provider": "kubernetes",
+      "control_ref": "kubernetes.workload.privileged",
+      "title": "Remove unnecessary privileged execution",
+      "iac_targets": ["kubernetes", "helm", "kustomize", "opa"],
+      "monthly_cost_usd": {"low": 0.0, "expected": 0.0, "high": 20.0},
+      "base_risk": 5,
+      "change": "Set a least-privilege security context and admission policy while preserving explicitly justified system workloads.",
+      "tests": ["Run workload functional and startup tests", "Validate required device and filesystem access", "Exercise admission policy in audit mode", "Collect runtime and admission evidence"]
+    },
+    {
+      "id": "cloud-logging-disabled",
+      "provider": "multicloud",
+      "control_ref": "cloud.logging.enabled",
+      "title": "Enable a bounded provider-native audit-log pipeline",
+      "iac_targets": ["terraform", "opentofu", "bicep", "cloudformation"],
+      "monthly_cost_usd": {"low": 5.0, "expected": 45.0, "high": 500.0},
+      "base_risk": 2,
+      "change": "Enable required management and data-plane logs with explicit scope, filters, retention, routing and cost alerts.",
+      "tests": ["Generate and locate a canary event", "Verify retention and encryption", "Test alert routing", "Measure seven-day ingestion before approving the forecast"]
+    }
+  ]
+}

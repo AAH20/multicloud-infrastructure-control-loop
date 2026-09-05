@@ -1,0 +1,60 @@
+{
+  "approval": {
+    "minimum_reviewers": 2,
+    "required": true,
+    "state": "unapproved"
+  },
+  "blast_radius": {
+    "dependency_count": 6,
+    "factors": {
+      "base": 5,
+      "data_path": 0,
+      "dependencies": 2,
+      "shared_scope": 2
+    },
+    "level": "critical",
+    "score": 9
+  },
+  "control_ref": "kubernetes.workload.privileged",
+  "cost": {
+    "confidence": "low",
+    "currency": "USD",
+    "model": "fixture assumption, not a provider quote",
+    "monthly_delta": {
+      "expected": 0.0,
+      "high": 20.0,
+      "low": 0.0
+    },
+    "validation_required": [
+      "Live provider pricing",
+      "Region and tier",
+      "Measured traffic or ingestion",
+      "Existing commitments and discounts"
+    ]
+  },
+  "iac_targets": [
+    "kubernetes",
+    "helm",
+    "kustomize",
+    "opa"
+  ],
+  "input_digest": "1ee57b2f98fc6a9d4bd1648d17ed696c3c15fc1f860e2af28d3d24b52566e989",
+  "mutation": {
+    "allowed_by_compiler": false,
+    "performed": false
+  },
+  "observed_at": "2026-09-05T10:00:00Z",
+  "proposal_id": "clp-30e471a8a5c4dbca6ccd",
+  "proposed_change": "Set a least-privilege security context and admission policy while preserving explicitly justified system workloads.",
+  "provider": "kubernetes",
+  "rule_id": "kubernetes-privileged-workload",
+  "schema_version": "1.0",
+  "scope": "cluster/synthetic/namespaces/platform/deployments/device-plugin",
+  "tests": [
+    "Run workload functional and startup tests",
+    "Validate required device and filesystem access",
+    "Exercise admission policy in audit mode",
+    "Collect runtime and admission evidence"
+  ],
+  "title": "Remove unnecessary privileged execution"
+}

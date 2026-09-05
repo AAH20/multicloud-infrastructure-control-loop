@@ -1,0 +1,1 @@
+{"provider":"aws","control_ref":"cloud.logging.enabled","scope":"organization/synthetic/logging-baseline","status":"not_satisfied","observed_at":"2026-09-05T10:00:00Z","context":{"dependency_count":10,"shared_scope":true,"data_path":false,"confidence":0.8,"monthly_events_million":25.0}}

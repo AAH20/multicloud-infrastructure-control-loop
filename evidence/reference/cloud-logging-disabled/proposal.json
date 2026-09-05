@@ -1,0 +1,60 @@
+{
+  "approval": {
+    "minimum_reviewers": 2,
+    "required": true,
+    "state": "unapproved"
+  },
+  "blast_radius": {
+    "dependency_count": 10,
+    "factors": {
+      "base": 2,
+      "data_path": 0,
+      "dependencies": 3,
+      "shared_scope": 2
+    },
+    "level": "high",
+    "score": 7
+  },
+  "control_ref": "cloud.logging.enabled",
+  "cost": {
+    "confidence": "low",
+    "currency": "USD",
+    "model": "fixture assumption, not a provider quote",
+    "monthly_delta": {
+      "expected": 1125.0,
+      "high": 12500.0,
+      "low": 125.0
+    },
+    "validation_required": [
+      "Live provider pricing",
+      "Region and tier",
+      "Measured traffic or ingestion",
+      "Existing commitments and discounts"
+    ]
+  },
+  "iac_targets": [
+    "terraform",
+    "opentofu",
+    "bicep",
+    "cloudformation"
+  ],
+  "input_digest": "252b0e4c79ff43167ebcf4bc816ddf8e0f24db0ba6136bb38b47fb885903ee31",
+  "mutation": {
+    "allowed_by_compiler": false,
+    "performed": false
+  },
+  "observed_at": "2026-09-05T10:00:00Z",
+  "proposal_id": "clp-bb2a831f20e6ed931ad1",
+  "proposed_change": "Enable required management and data-plane logs with explicit scope, filters, retention, routing and cost alerts.",
+  "provider": "aws",
+  "rule_id": "cloud-logging-disabled",
+  "schema_version": "1.0",
+  "scope": "organization/synthetic/logging-baseline",
+  "tests": [
+    "Generate and locate a canary event",
+    "Verify retention and encryption",
+    "Test alert routing",
+    "Measure seven-day ingestion before approving the forecast"
+  ],
+  "title": "Enable a bounded provider-native audit-log pipeline"
+}
